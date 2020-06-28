@@ -7,9 +7,9 @@ Projeto criado para auxiliar na demonstração da configuração do ambiente par
  - Mocha https://mochajs.org/
  - Chai https://www.chaijs.com/
  - Chai-http https://www.chaijs.com/plugins/chai-http/
- 
+ - MockMongoose https://www.npmjs.com/package/mock-mongoose
  
 ## Instalação das biliotecas
 ```shell
-npm install -D mocha chai chai-http
+npm install -D mocha chai chai-http mock-mongoose
 ```

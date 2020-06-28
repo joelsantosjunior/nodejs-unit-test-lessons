@@ -13,3 +13,8 @@ Projeto criado para auxiliar na demonstração da configuração do ambiente par
 ```shell
 npm install -D mocha chai chai-http mock-mongoose
 ```
+
+## Instalação das bibliotecas para definição dos tipos [TypeScript]
+```shell
+npm install -D @types/mocha @types/chai
+```

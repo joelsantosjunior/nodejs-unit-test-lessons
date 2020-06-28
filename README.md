@@ -6,3 +6,10 @@ Projeto criado para auxiliar na demonstração da configuração do ambiente par
 ## Bibliotecas utilizadas para a criação e execução dos testes:
  - Mocha https://mochajs.org/
  - Chai https://www.chaijs.com/
+ - Chai-http https://www.chaijs.com/plugins/chai-http/
+ 
+ 
+## Instalação das biliotecas
+'''shell
+npm install -D mocha chai chai-http
+'''

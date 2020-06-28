@@ -1,7 +1,4 @@
 import mongoose from 'mongoose';
-import { MockMongoose } from 'mock-mongoose';
-
-let mockMongoose: MockMongoose = new MockMongoose(mongoose);
 
 export default () => {
 

@@ -10,6 +10,6 @@ Projeto criado para auxiliar na demonstração da configuração do ambiente par
  
  
 ## Instalação das biliotecas
-'''shell
+```shell
 npm install -D mocha chai chai-http
-'''
+```

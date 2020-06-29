@@ -18,3 +18,14 @@ npm install -D mocha chai chai-http mock-mongoose
 ```shell
 npm install -D @types/mocha @types/chai
 ```
+
+## Pacote para visualização dos arquivos de report
+https://github.com/adamgruber/mochawesome
+```shell
+npm install --save-dev mochawesome
+```
+Atualizar o script "test" no package.json, incluir o seguinte comando:
+```shell
+--reporter mochawesome
+```
+

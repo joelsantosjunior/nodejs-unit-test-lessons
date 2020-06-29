@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 import { MockMongoose } from 'mock-mongoose';
 
-let mockMongoose: MockMongoose = new MockMongoose(mongoose);
-
 export default () => {
 
     const connect = async () => {
@@ -18,6 +16,7 @@ export default () => {
                 // e evita a manipulação indevida dos dados que estão no servidor mongodb
                 // o método prepareStorage, executa, além de outras coisas,
                 // a criação de todos os schemas previamente definidos.
+                let mockMongoose: MockMongoose = new MockMongoose(mongoose);
                 mockMongoose.prepareStorage().then(async () => {
                     await mongoose.connect(db, {
                         useNewUrlParser: true,

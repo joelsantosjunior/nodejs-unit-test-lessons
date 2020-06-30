@@ -1,9 +1,13 @@
 import chai, { expect } from 'chai';
 import app from '../../src/app';
 import http from 'chai-http';
-import { doesNotMatch } from 'assert';
 
 chai.use(http);
+
+const mockTodo = {
+    name: 'Task Test 1',
+    description: 'Task Test Description 1'
+};
 
 describe('TODO API', function() {
 
@@ -27,10 +31,7 @@ describe('TODO API', function() {
     });
 
     it('Adding a new TODO', function(done) {
-        agent.post('/todo').send({
-            name: 'Task Test 1',
-            description: 'Task Test Description 1'
-        }).end(function (err, res) {
+        agent.post('/todo').send(mockTodo).end(function (err, res) {
 
             expect(res.body).to.have.property('name', 'Task Test 1');
             expect(res.body).to.have.property('description', 'Task Test Description 1');
@@ -40,4 +41,25 @@ describe('TODO API', function() {
             done();
         });
     });
+
+    it('Removes the Todo previously added', function(done) {
+        agent.get('/todo').then(function (todos) {
+            agent.delete(`/todo/${todos.body[0]._id}`)
+                .end(function (err, res) {
+                    
+                    expect(res.body).to.have.property("deleted", true);
+
+                    done();
+                });
+        });
+    });
+
+
+    // it('Removes the Todo previously added [Async / Await]', async function() {
+    //     const todos = await agent.get('/todo'); //.send();
+        
+    //     const deleted = await agent.delete(`/todo/${todos.body[0]._id}`); //.send();
+        
+    //     expect(deleted.body).to.have.property("deleted", true);
+    // });
 });

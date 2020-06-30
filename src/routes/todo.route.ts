@@ -70,7 +70,7 @@ todoRouter.delete('/:id', async (req: Request, res: Response) => {
 
     try {
         await TodoModel.deleteOne({ _id: id });
-        res.json({ status: 'ok', message: '' });
+        res.json({ deleted: true });
 
     } catch (error) {
 
